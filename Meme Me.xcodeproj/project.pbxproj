@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1713D1FA1B9E699500DC9D62 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713D1F91B9E699400DC9D62 /* Meme.swift */; };
 		17B1D1621B9E339A006B90CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1D1611B9E339A006B90CD /* AppDelegate.swift */; };
 		17B1D1641B9E339A006B90CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1D1631B9E339A006B90CD /* ViewController.swift */; };
 		17B1D1671B9E339A006B90CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B1D1651B9E339A006B90CD /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1713D1F91B9E699400DC9D62 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		17B1D15C1B9E339A006B90CD /* Meme Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B1D1601B9E339A006B90CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17B1D1611B9E339A006B90CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				17B1D1681B9E339A006B90CD /* Images.xcassets */,
 				17B1D16A1B9E339A006B90CD /* LaunchScreen.xib */,
 				17B1D15F1B9E339A006B90CD /* Supporting Files */,
+				1713D1F91B9E699400DC9D62 /* Meme.swift */,
 			);
 			path = "Meme Me";
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B1D1641B9E339A006B90CD /* ViewController.swift in Sources */,
+				1713D1FA1B9E699500DC9D62 /* Meme.swift in Sources */,
 				17B1D1621B9E339A006B90CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +413,7 @@
 				17B1D17D1B9E339A006B90CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17B1D17E1B9E339A006B90CD /* Build configuration list for PBXNativeTarget "Meme MeTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				17B1D1801B9E339A006B90CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
