@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,8 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHz-W5-PG2">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem id="anr-iD-asH">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="4Wz-Bf-6yh">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="vXZ-lx-hvc" id="X5O-UO-06G"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="SoV-RD-vQV">
+                                            <connections>
+                                                <action selector="cancelEditing:" destination="vXZ-lx-hvc" id="SSe-HY-P6Y"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bx0-9a-Lhx">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="g4O-L6-dRW"/>
                                 </constraints>
@@ -36,28 +56,12 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHz-W5-PG2">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem id="anr-iD-asH">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="4Wz-Bf-6yh">
-                                            <connections>
-                                                <action selector="shareMeme:" destination="vXZ-lx-hvc" id="X5O-UO-06G"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="SoV-RD-vQV">
-                                            <connections>
-                                                <action selector="cancelEditing:" destination="vXZ-lx-hvc" id="SSe-HY-P6Y"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZJ-Xl-Bpt">
-                                <rect key="frame" x="16" y="64" width="568" height="492"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZJ-Xl-Bpt" userLabel="MemeView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-4c-Bka">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="492"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
+                                        <animations/>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="180" y="336" width="240" height="128"/>
                                         </variation>
@@ -66,7 +70,8 @@
                                         </variation>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top Text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-J5-7dZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="AMb-Zu-mSv"/>
                                         </constraints>
@@ -74,7 +79,8 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom Text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHP-eo-c8N">
-                                        <rect key="frame" x="0.0" y="432" width="568" height="60"/>
+                                        <rect key="frame" x="0.0" y="432" width="600" height="60"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="c5a-a0-dGy"/>
                                         </constraints>
@@ -82,6 +88,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mHP-eo-c8N" secondAttribute="trailing" id="F6i-kv-hW0"/>
@@ -105,24 +112,54 @@
                                 </variation>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="top" secondItem="mHz-W5-PG2" secondAttribute="top" id="16E-YI-bqh"/>
+                            <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" id="2aL-oh-wI9"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="bx0-9a-Lhx" secondAttribute="bottom" id="BNk-uV-8sy"/>
                             <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="CB7-7E-Pvk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mHz-W5-PG2" secondAttribute="trailing" constant="-16" id="JLm-Ic-SmG"/>
-                            <constraint firstItem="mHz-W5-PG2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="XsU-tf-sn1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mHz-W5-PG2" secondAttribute="trailing" id="JLm-Ic-SmG"/>
+                            <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="Nbm-rx-Kqo"/>
+                            <constraint firstItem="mHz-W5-PG2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="O8P-4R-gc2"/>
+                            <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="OMH-ee-PmT"/>
+                            <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="RMr-aB-1jn"/>
+                            <constraint firstItem="bx0-9a-Lhx" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="RYI-7q-yUq"/>
+                            <constraint firstItem="mHz-W5-PG2" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="UPo-AQ-k0J"/>
+                            <constraint firstItem="bx0-9a-Lhx" firstAttribute="top" secondItem="bZJ-Xl-Bpt" secondAttribute="bottom" id="VIe-dY-RID"/>
+                            <constraint firstItem="mHz-W5-PG2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="XsU-tf-sn1"/>
                             <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="top" secondItem="mHz-W5-PG2" secondAttribute="bottom" id="YRB-NK-exf"/>
                             <constraint firstItem="mHz-W5-PG2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="ZGZ-2d-hKT"/>
+                            <constraint firstItem="bx0-9a-Lhx" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="axx-Cy-oqQ"/>
+                            <constraint firstItem="bx0-9a-Lhx" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="cLI-g5-qlr"/>
                             <constraint firstItem="bx0-9a-Lhx" firstAttribute="top" secondItem="bZJ-Xl-Bpt" secondAttribute="bottom" id="g70-he-llm"/>
+                            <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="bottom" secondItem="bx0-9a-Lhx" secondAttribute="bottom" id="m0y-2W-icY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bZJ-Xl-Bpt" secondAttribute="trailing" id="mjP-OT-uN2"/>
                             <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="top" secondItem="mHz-W5-PG2" secondAttribute="bottom" id="nKR-LG-0FP"/>
+                            <constraint firstItem="mHz-W5-PG2" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="pel-rF-Rjx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bx0-9a-Lhx" secondAttribute="trailing" constant="-16" id="tF3-W4-uvf"/>
+                            <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="top" secondItem="mHz-W5-PG2" secondAttribute="bottom" id="wxT-kw-sYE"/>
                             <constraint firstItem="mHz-W5-PG2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="z5I-rj-rOz"/>
                             <constraint firstItem="bx0-9a-Lhx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="zBQ-4Z-cNW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="JLm-Ic-SmG"/>
+                                <exclude reference="XsU-tf-sn1"/>
+                                <exclude reference="ZGZ-2d-hKT"/>
+                                <exclude reference="z5I-rj-rOz"/>
+                                <exclude reference="16E-YI-bqh"/>
+                                <exclude reference="2aL-oh-wI9"/>
+                                <exclude reference="CB7-7E-Pvk"/>
+                                <exclude reference="Nbm-rx-Kqo"/>
+                                <exclude reference="YRB-NK-exf"/>
+                                <exclude reference="m0y-2W-icY"/>
+                                <exclude reference="mjP-OT-uN2"/>
                                 <exclude reference="nKR-LG-0FP"/>
+                                <exclude reference="cLI-g5-qlr"/>
+                                <exclude reference="g70-he-llm"/>
+                                <exclude reference="tF3-W4-uvf"/>
+                                <exclude reference="zBQ-4Z-cNW"/>
                             </mask>
                         </variation>
                     </view>

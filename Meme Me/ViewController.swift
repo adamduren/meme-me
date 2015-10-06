@@ -107,7 +107,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(pickerController, animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imageView.image = image
             shareButton.enabled = true
@@ -146,15 +146,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let shareController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         
         shareController.completionWithItemsHandler = { (activityType, completed, returnedItems, activityError) -> Void in
-            let meme = Meme(
-                topText: self.topTextField.text!,
-                bottomText: self.bottomTextField.text!,
-                originalImage: self.imageView.image!,
-                memedImage: memedImage
-            )
+            if (completed) {
+                self.saveMeme(memedImage)
+            }
         }
         
         self.presentViewController(shareController, animated: true, completion: nil)
+    }
+    
+    func saveMeme(memedImage: UIImage) {
+        let meme = Meme(
+            topText: self.topTextField.text!,
+            bottomText: self.bottomTextField.text!,
+            originalImage: self.imageView.image!,
+            memedImage: memedImage
+        )
+        
+        var memes = (UIApplication.sharedApplication().delegate as! AppDelegate).memes;
+        
+        memes.append(meme)
     }
     
     func resetViewState() {
