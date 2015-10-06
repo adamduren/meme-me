@@ -16,7 +16,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var navbar: UINavigationBar!
     @IBOutlet weak var toolbar: UIToolbar!
-    @IBOutlet weak var testView: UIView!
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var memeVIew: UIView!
+    
+    var orientation: UIInterfaceOrientation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +44,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.unsubscribeFromKeyboardNotifications()
+    }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        orientation = UIApplication.sharedApplication().statusBarOrientation;
+        updateConstraints()
     }
     
     func subscribeToKeyboardNotifications() {
@@ -107,9 +116,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(pickerController, animated: true, completion: nil)
     }
     
+    func updateConstraints() {
+        let parentFrame = self.imageView.superview!.frame
+        
+        if let image = self.imageView.image {
+            if (image.size.width > image.size.height && orientation.isPortrait) {
+                imageViewHeightConstraint.constant = parentFrame.width * image.size.height / image.size.width
+                imageViewWidthConstraint.constant = parentFrame.width;
+            } else {
+                imageViewHeightConstraint.constant = parentFrame.height
+                imageViewWidthConstraint.constant = parentFrame.height * image.size.width / image.size.height
+            }
+        } else {
+            imageViewHeightConstraint.constant = parentFrame.height
+            imageViewWidthConstraint.constant = parentFrame.width
+        }
+        self.imageView.superview!.layoutIfNeeded()
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imageView.image = image
+            updateConstraints()
             shareButton.enabled = true
         }
     
@@ -119,8 +148,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage
     {
         
-        UIGraphicsBeginImageContext(testView.frame.size)
-        testView.drawViewHierarchyInRect(testView.bounds,
+        UIGraphicsBeginImageContext(memeVIew.frame.size)
+        memeVIew.drawViewHierarchyInRect(memeVIew.bounds,
             afterScreenUpdates: true)
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
@@ -172,6 +201,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.text = "Bottom Text"
         imageView.image = nil
         shareButton.enabled = false
+        orientation = UIApplication.sharedApplication().statusBarOrientation
     }
     
 }
