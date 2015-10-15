@@ -43,17 +43,19 @@
                                     <constraint firstAttribute="height" constant="44" id="g4O-L6-dRW"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Pick" id="wB3-e0-iv0">
-                                        <connections>
-                                            <action selector="pickAnImage:" destination="vXZ-lx-hvc" id="3Mo-Ji-1KA"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="C7S-KH-Cgu"/>
                                     <barButtonItem systemItem="camera" id="huA-ik-PA2">
                                         <connections>
                                             <action selector="pickFromCamera:" destination="vXZ-lx-hvc" id="Dbk-0N-aFq"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="jof-rn-J8w"/>
+                                    <barButtonItem title="Album" id="wB3-e0-iv0">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="vXZ-lx-hvc" id="3Mo-Ji-1KA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lMl-GU-uK8"/>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZJ-Xl-Bpt" userLabel="MemeView">
@@ -62,7 +64,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-4c-Bka">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="600" id="NWU-YT-moR"/>
                                             <constraint firstAttribute="height" constant="492" id="xwa-cB-2mp"/>
@@ -74,8 +75,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top Text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-J5-7dZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-J5-7dZ">
+                                        <rect key="frame" x="15" y="0.0" width="570" height="60"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="AMb-Zu-mSv"/>
@@ -83,8 +84,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom Text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHP-eo-c8N">
-                                        <rect key="frame" x="0.0" y="432" width="600" height="60"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHP-eo-c8N">
+                                        <rect key="frame" x="15" y="432" width="570" height="60"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="c5a-a0-dGy"/>
@@ -98,11 +99,11 @@
                                 <constraints>
                                     <constraint firstItem="oR3-J5-7dZ" firstAttribute="top" secondItem="gmF-4c-Bka" secondAttribute="top" id="31U-3b-R7q"/>
                                     <constraint firstItem="mHP-eo-c8N" firstAttribute="bottom" secondItem="gmF-4c-Bka" secondAttribute="bottom" id="3cI-5l-jrz"/>
-                                    <constraint firstItem="mHP-eo-c8N" firstAttribute="trailing" secondItem="gmF-4c-Bka" secondAttribute="trailing" id="4Hs-7G-k5c"/>
+                                    <constraint firstItem="mHP-eo-c8N" firstAttribute="trailing" secondItem="gmF-4c-Bka" secondAttribute="trailing" constant="-15" id="4Hs-7G-k5c"/>
                                     <constraint firstItem="gmF-4c-Bka" firstAttribute="centerX" secondItem="bZJ-Xl-Bpt" secondAttribute="centerX" id="4KY-E2-6SC"/>
-                                    <constraint firstItem="oR3-J5-7dZ" firstAttribute="trailing" secondItem="gmF-4c-Bka" secondAttribute="trailing" id="Dv1-aC-OXt"/>
+                                    <constraint firstItem="oR3-J5-7dZ" firstAttribute="trailing" secondItem="gmF-4c-Bka" secondAttribute="trailing" constant="-15" id="Dv1-aC-OXt"/>
                                     <constraint firstAttribute="trailing" secondItem="mHP-eo-c8N" secondAttribute="trailing" id="F6i-kv-hW0"/>
-                                    <constraint firstItem="oR3-J5-7dZ" firstAttribute="leading" secondItem="gmF-4c-Bka" secondAttribute="leading" id="Heu-aI-58d"/>
+                                    <constraint firstItem="oR3-J5-7dZ" firstAttribute="leading" secondItem="gmF-4c-Bka" secondAttribute="leading" constant="15" id="Heu-aI-58d"/>
                                     <constraint firstAttribute="trailing" secondItem="oR3-J5-7dZ" secondAttribute="trailing" id="LGf-J8-oFI"/>
                                     <constraint firstItem="gmF-4c-Bka" firstAttribute="leading" secondItem="bZJ-Xl-Bpt" secondAttribute="leading" id="NH2-Qm-UgZ"/>
                                     <constraint firstAttribute="trailing" secondItem="oR3-J5-7dZ" secondAttribute="trailing" id="PDN-5R-4fF"/>
@@ -115,7 +116,7 @@
                                     <constraint firstAttribute="bottom" secondItem="gmF-4c-Bka" secondAttribute="bottom" id="mrO-0g-Ek5"/>
                                     <constraint firstItem="oR3-J5-7dZ" firstAttribute="top" secondItem="bZJ-Xl-Bpt" secondAttribute="top" id="n3u-bS-mCP"/>
                                     <constraint firstItem="mHP-eo-c8N" firstAttribute="leading" secondItem="bZJ-Xl-Bpt" secondAttribute="leading" id="pEU-IE-hcz"/>
-                                    <constraint firstItem="mHP-eo-c8N" firstAttribute="leading" secondItem="gmF-4c-Bka" secondAttribute="leading" id="pJG-ro-mXV"/>
+                                    <constraint firstItem="mHP-eo-c8N" firstAttribute="leading" secondItem="gmF-4c-Bka" secondAttribute="leading" constant="15" id="pJG-ro-mXV"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
