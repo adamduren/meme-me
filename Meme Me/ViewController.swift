@@ -30,20 +30,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         configureTextField(bottomTextField)
         resetViewState()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
@@ -67,13 +62,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomTextField.editing {
-            self.view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if bottomTextField.editing {
-            self.view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y = 0
         }
     }
     
@@ -113,13 +108,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             pickerController.sourceType = sourceType!
         }
         
-        self.presentViewController(pickerController, animated: true, completion: nil)
+        presentViewController(pickerController, animated: true, completion: nil)
     }
     
     func updateConstraints() {
-        let parentFrame = self.imageView.superview!.frame
+        let parentFrame = imageView.superview!.frame
         
-        if let image = self.imageView.image {
+        if let image = imageView.image {
             if (image.size.width > image.size.height && orientation.isPortrait) {
                 imageViewHeightConstraint.constant = parentFrame.width * image.size.height / image.size.width
                 imageViewWidthConstraint.constant = parentFrame.width;
@@ -131,13 +126,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imageViewHeightConstraint.constant = parentFrame.height
             imageViewWidthConstraint.constant = parentFrame.width
         }
-        self.imageView.superview!.layoutIfNeeded()
+        imageView.superview!.layoutIfNeeded()
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.imageView.image = image
+            imageView.image = image
             updateConstraints()
             shareButton.enabled = true
         }
@@ -180,14 +175,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         
-        self.presentViewController(shareController, animated: true, completion: nil)
+        presentViewController(shareController, animated: true, completion: nil)
     }
     
     func saveMeme(memedImage: UIImage) {
         let meme = Meme(
-            topText: self.topTextField.text!,
-            bottomText: self.bottomTextField.text!,
-            originalImage: self.imageView.image!,
+            topText: topTextField.text!,
+            bottomText: bottomTextField.text!,
+            originalImage: imageView.image!,
             memedImage: memedImage
         )
         
