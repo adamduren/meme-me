@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AddMemeViewController.swift
 //  Meme Me
 //
 //  Created by Adam Duren on 9/7/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
@@ -162,7 +162,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func cancelEditing(sender: UIBarButtonItem) {
-        resetViewState()
+        dismissViewControllerAnimated(true, completion: nil)
+//        resetViewState()
     }
     
     @IBAction func shareMeme(sender: UIBarButtonItem) {
@@ -186,9 +187,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             memedImage: memedImage
         )
         
-        var memes = (UIApplication.sharedApplication().delegate as! AppDelegate).memes;
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.memes.append(meme)
         
-        memes.append(meme)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func resetViewState() {
