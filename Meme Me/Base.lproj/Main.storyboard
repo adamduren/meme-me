@@ -9,6 +9,7 @@
         <!--Sent Memes-->
         <scene sceneID="ICF-2j-gF2">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tIg-nD-lb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="A7T-iH-ktE" customClass="MemeTableViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zEe-S1-beO" customClass="Meme">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -47,13 +48,13 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tIg-nD-lb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-399" y="-352"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="htH-66-10f">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQB-yU-hyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="Gkh-x3-PM9" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tqL-wh-jsd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -88,7 +89,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0jZ-QW-6BY"/>
                     </navigationItem>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WQB-yU-hyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-399" y="313"/>
         </scene>
@@ -150,6 +150,7 @@
         <!--Add Meme-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <viewController title="Add Meme" id="vXZ-lx-hvc" customClass="AddMemeViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
@@ -159,7 +160,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHz-W5-PG2">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHz-W5-PG2">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <animations/>
                                 <items>
@@ -177,7 +178,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bx0-9a-Lhx">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bx0-9a-Lhx">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <constraints>
@@ -199,10 +200,10 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="lMl-GU-uK8"/>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZJ-Xl-Bpt" userLabel="MemeView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZJ-Xl-Bpt" userLabel="MemeView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-4c-Bka">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-4c-Bka">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                                         <animations/>
                                         <constraints>
@@ -216,7 +217,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-J5-7dZ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-J5-7dZ">
                                         <rect key="frame" x="15" y="0.0" width="570" height="60"/>
                                         <animations/>
                                         <constraints>
@@ -225,7 +226,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHP-eo-c8N">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHP-eo-c8N">
                                         <rect key="frame" x="15" y="432" width="570" height="60"/>
                                         <animations/>
                                         <constraints>
@@ -236,7 +237,7 @@
                                     </textField>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="oR3-J5-7dZ" firstAttribute="top" secondItem="gmF-4c-Bka" secondAttribute="top" id="31U-3b-R7q"/>
                                     <constraint firstItem="mHP-eo-c8N" firstAttribute="bottom" secondItem="gmF-4c-Bka" secondAttribute="bottom" id="3cI-5l-jrz"/>
@@ -278,7 +279,7 @@
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="top" secondItem="mHz-W5-PG2" secondAttribute="top" id="16E-YI-bqh"/>
                             <constraint firstItem="bZJ-Xl-Bpt" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" id="2aL-oh-wI9"/>
@@ -341,9 +342,25 @@
                         <outlet property="topTextField" destination="oR3-J5-7dZ" id="fgX-mz-u4z"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="-29"/>
+            <point key="canvasLocation" x="524" y="-425"/>
+        </scene>
+        <!--Detail View-->
+        <scene sceneID="Ebh-c7-5IP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HeJ-OX-9F1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="MemeDetail" title="Detail View" id="ebc-6u-nBc" customClass="MemeDetailViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="axv-Vm-1oM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
+                    </imageView>
+                    <connections>
+                        <outlet property="memeImage" destination="axv-Vm-1oM" id="TeI-4Q-9bV"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="524" y="334"/>
         </scene>
     </scenes>
     <resources>
