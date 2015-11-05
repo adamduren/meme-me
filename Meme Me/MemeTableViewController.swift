@@ -12,7 +12,7 @@ class MemeTableViewController: UITableViewController {
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     };
-    let cellReuseIdentifier = "MemeCell";
+    let cellReuseIdentifier = "MemeTableCell";
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
