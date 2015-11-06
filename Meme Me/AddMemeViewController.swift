@@ -20,6 +20,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var memeVIew: UIView!
     
+    var meme: Meme!
     var orientation: UIInterfaceOrientation!
     
     override func viewDidLoad() {
@@ -29,6 +30,15 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         configureTextField(topTextField)
         configureTextField(bottomTextField)
         resetViewState()
+        
+        if (meme != nil) {
+            topTextField.text = meme.topText
+            bottomTextField.text = meme.bottomText
+            imageView.image = meme.originalImage
+            imageView.updateConstraints()
+            updateConstraints()
+        }
+        updateConstraints()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -112,6 +122,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func updateConstraints() {
+        return
         let parentFrame = imageView.superview!.frame
         
         if let image = imageView.image {
@@ -163,7 +174,6 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func cancelEditing(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
-//        resetViewState()
     }
     
     @IBAction func shareMeme(sender: UIBarButtonItem) {
