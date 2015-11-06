@@ -37,6 +37,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
             imageView.image = meme.originalImage
             imageView.updateConstraints()
             updateConstraints()
+            shareButton.enabled = true
         }
         updateConstraints()
     }
@@ -122,7 +123,6 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func updateConstraints() {
-        return
         let parentFrame = imageView.superview!.frame
         
         if let image = imageView.image {
