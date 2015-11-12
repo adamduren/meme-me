@@ -39,13 +39,14 @@ class MemeTableViewController: UITableViewController {
         return cell!;
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("here")
-        let detailVC = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetail") as! MemeDetailViewController
-        
-        detailVC.meme = memes[indexPath.row]
-        
-        self.navigationController!.pushViewController(detailVC, animated: true)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "TableToDetailSegue") {
+            let detailVC = segue.destinationViewController as! MemeDetailViewController
+            let cell = sender as! UITableViewCell
+            let indexPath = self.tableView.indexPathForCell(cell)!
+            
+            detailVC.meme = memes[indexPath.row]
+        }
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

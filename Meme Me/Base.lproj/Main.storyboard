@@ -35,6 +35,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="qx1-j5-iSk" kind="presentation" identifier="TableToDetailSegue" id="Xbr-Mb-a2w"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -42,7 +45,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="1jI-S2-baC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cp2-pG-lag">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="presentation" id="ITK-nh-9j1"/>
+                                <segue destination="vXZ-lx-hvc" kind="presentation" identifier="TableToEditSegue" id="ITK-nh-9j1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -93,6 +96,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="7oW-Mx-mGJ" id="8CS-OV-Nqy"/>
+                                    <segue destination="qx1-j5-iSk" kind="presentation" identifier="CollectionToDetailSegue" id="wkI-ap-IYq"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -234,15 +238,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="NWU-YT-moR"/>
-                                            <constraint firstAttribute="height" constant="100" id="xwa-cB-2mp"/>
+                                            <constraint firstAttribute="width" constant="600" id="NWU-YT-moR"/>
+                                            <constraint firstAttribute="height" constant="492" id="xwa-cB-2mp"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="NWU-YT-moR"/>
-                                                <exclude reference="xwa-cB-2mp"/>
-                                            </mask>
-                                        </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="180" y="336" width="240" height="128"/>
                                         </variation>
@@ -298,8 +296,12 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="2Qj-w0-teM"/>
                                         <exclude reference="NH2-Qm-UgZ"/>
                                         <exclude reference="SMA-7m-xW6"/>
+                                        <exclude reference="WwS-LR-iJ1"/>
+                                        <exclude reference="aVl-W2-cGc"/>
+                                        <exclude reference="bn8-HS-6gd"/>
                                         <exclude reference="hrx-kN-hvk"/>
                                         <exclude reference="mrO-0g-Ek5"/>
                                         <exclude reference="LGf-J8-oFI"/>
@@ -393,29 +395,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="axv-Vm-1oM">
-                                <rect key="frame" x="50" y="50" width="500" height="500"/>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZcQ-F0-6Fr">
+                                <rect key="frame" x="0.0" y="0.0" width="595" height="44"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="5av-Sf-9TF"/>
-                                    <constraint firstAttribute="width" constant="500" id="cQA-d3-pZg"/>
+                                    <constraint firstAttribute="height" constant="44" id="8OH-He-sCS"/>
                                 </constraints>
+                                <items>
+                                    <navigationItem title="Meme Detail" id="sz3-LZ-g7b">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="0bR-r0-XrT">
+                                            <connections>
+                                                <action selector="dismissDetail:" destination="qx1-j5-iSk" id="qVW-uW-DFI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="GxO-Rn-ghd">
+                                            <connections>
+                                                <segue destination="vXZ-lx-hvc" kind="presentation" identifier="DetailToEditSegue" id="ON9-qX-jTG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="axv-Vm-1oM">
+                                <rect key="frame" x="20" y="44" width="560" height="556"/>
+                                <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="axv-Vm-1oM" firstAttribute="top" secondItem="Hj7-oQ-4yS" secondAttribute="bottom" id="5gp-eR-U4d"/>
+                            <constraint firstItem="ZcQ-F0-6Fr" firstAttribute="top" secondItem="ZYm-fO-Igl" secondAttribute="topMargin" id="8ic-hj-du4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="axv-Vm-1oM" secondAttribute="trailing" id="8lj-bd-r4A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZcQ-F0-6Fr" secondAttribute="trailing" id="Aso-DK-9XP"/>
+                            <constraint firstItem="axv-Vm-1oM" firstAttribute="leading" secondItem="ZYm-fO-Igl" secondAttribute="leadingMargin" id="Bmw-i7-HXO"/>
+                            <constraint firstItem="MUv-lv-0SW" firstAttribute="top" secondItem="axv-Vm-1oM" secondAttribute="bottom" id="GfT-d1-hck"/>
                             <constraint firstItem="axv-Vm-1oM" firstAttribute="centerX" secondItem="ZYm-fO-Igl" secondAttribute="centerX" id="MZW-lc-9wH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="axv-Vm-1oM" secondAttribute="trailing" id="TuZ-zB-SaL"/>
                             <constraint firstItem="axv-Vm-1oM" firstAttribute="centerY" secondItem="ZYm-fO-Igl" secondAttribute="centerY" id="Tws-qw-zYa"/>
                             <constraint firstAttribute="bottomMargin" secondItem="axv-Vm-1oM" secondAttribute="bottom" id="aGU-R4-cC4"/>
                             <constraint firstItem="axv-Vm-1oM" firstAttribute="leading" secondItem="ZYm-fO-Igl" secondAttribute="leadingMargin" id="eHx-7I-DAW"/>
+                            <constraint firstItem="ZcQ-F0-6Fr" firstAttribute="leading" secondItem="ZYm-fO-Igl" secondAttribute="leadingMargin" constant="-20" id="gBO-Fg-MjU"/>
+                            <constraint firstItem="axv-Vm-1oM" firstAttribute="top" secondItem="ZcQ-F0-6Fr" secondAttribute="bottom" id="lgg-sJ-iNZ"/>
+                            <constraint firstItem="ZcQ-F0-6Fr" firstAttribute="leading" secondItem="ZYm-fO-Igl" secondAttribute="leadingMargin" id="nBx-uI-k4T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZcQ-F0-6Fr" secondAttribute="trailing" constant="-20" id="otu-d3-D7m"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Aso-DK-9XP"/>
+                                <exclude reference="nBx-uI-k4T"/>
                                 <exclude reference="5gp-eR-U4d"/>
+                                <exclude reference="MZW-lc-9wH"/>
                                 <exclude reference="TuZ-zB-SaL"/>
+                                <exclude reference="Tws-qw-zYa"/>
                                 <exclude reference="aGU-R4-cC4"/>
                                 <exclude reference="eHx-7I-DAW"/>
                             </mask>
@@ -423,12 +455,11 @@
                     </view>
                     <connections>
                         <outlet property="memeImage" destination="axv-Vm-1oM" id="KpK-Vq-aAW"/>
-                        <segue destination="vXZ-lx-hvc" kind="presentation" identifier="DetailToEditSegue" id="zEB-Kd-WY4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXH-05-seS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-399" y="1025"/>
+            <point key="canvasLocation" x="558" y="-524"/>
         </scene>
     </scenes>
     <resources>
@@ -436,6 +467,7 @@
         <image name="tableIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ITK-nh-9j1"/>
+        <segue reference="Xbr-Mb-a2w"/>
+        <segue reference="ON9-qX-jTG"/>
     </inferredMetricsTieBreakers>
 </document>

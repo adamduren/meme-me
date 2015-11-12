@@ -35,16 +35,19 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
             topTextField.text = meme.topText
             bottomTextField.text = meme.bottomText
             imageView.image = meme.originalImage
-            imageView.updateConstraints()
-            updateConstraints()
             shareButton.enabled = true
         }
-        updateConstraints()
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        updateConstraints()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -124,6 +127,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func updateConstraints() {
         let parentFrame = imageView.superview!.frame
+        imageView.updateConstraints()
         
         if let image = imageView.image {
             if (image.size.width > image.size.height && orientation.isPortrait) {
@@ -153,10 +157,16 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func generateMemedImage() -> UIImage
     {
+     
+        var bottomBounds = bottomTextField.bounds;
+        bottomBounds.origin.y = imageView.frame.height - bottomBounds.height;
         
-        UIGraphicsBeginImageContext(memeVIew.frame.size)
-        memeVIew.drawViewHierarchyInRect(memeVIew.bounds,
+        UIGraphicsBeginImageContext(imageView.frame.size)
+        imageView.drawViewHierarchyInRect(imageView.bounds,
             afterScreenUpdates: true)
+        bottomTextField.drawViewHierarchyInRect(bottomBounds, afterScreenUpdates: true)
+        topTextField.drawViewHierarchyInRect(topTextField.bounds, afterScreenUpdates: true)
+        
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

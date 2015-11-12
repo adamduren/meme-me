@@ -18,9 +18,8 @@ class MemeDetailViewController: UIViewController {
         let logButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "navigateToAddMeme:")
         self.navigationItem.rightBarButtonItem = logButton
     }
-    
-    func navigateToAddMeme(sender: AnyObject?) {
-        performSegueWithIdentifier("DetailToEditSegue", sender: sender)
+    @IBAction func dismissDetail(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

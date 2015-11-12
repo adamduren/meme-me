@@ -28,6 +28,7 @@ class MemeCollectionViewController: UICollectionViewController {
         let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
         
         flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSizeMake(dimension, dimension)
     }
     
@@ -45,13 +46,14 @@ class MemeCollectionViewController: UICollectionViewController {
         return cell;
     }
     
-    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        let detailVC = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetail") as! MemeDetailViewController
-        
-        detailVC.meme = memes[indexPath.row]
-        
-        self.navigationController!.pushViewController(detailVC, animated: true)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "CollectionToDetailSegue") {
+            let detailVC = segue.destinationViewController as! MemeDetailViewController
+            let cell = sender as! UICollectionViewCell
+            let indexPath = self.collectionView?.indexPathForCell(cell)
+            
+            detailVC.meme = memes[indexPath!.row]
+        }
     }
-
     
 }
