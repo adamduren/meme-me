@@ -96,7 +96,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="7oW-Mx-mGJ" id="8CS-OV-Nqy"/>
-                                    <segue destination="qx1-j5-iSk" kind="presentation" identifier="CollectionToDetailSegue" id="wkI-ap-IYq"/>
+                                    <segue destination="qx1-j5-iSk" kind="show" identifier="CollectionToDetailSegue" id="wkI-ap-IYq"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -424,7 +424,7 @@
         <image name="tableIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wkI-ap-IYq"/>
         <segue reference="ITK-nh-9j1"/>
-        <segue reference="Xbr-Mb-a2w"/>
     </inferredMetricsTieBreakers>
 </document>
