@@ -15,11 +15,12 @@ class MemeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         memeImage.image = meme.memedImage;
-        let logButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "navigateToAddMeme:")
-        self.navigationItem.rightBarButtonItem = logButton
+        let editButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "navigateToAddMeme:")
+        navigationItem.rightBarButtonItem = editButton
     }
-    @IBAction func dismissDetail(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    
+    func navigateToAddMeme(sender: AnyObject?) {
+        performSegueWithIdentifier("DetailToEditSegue", sender: sender)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

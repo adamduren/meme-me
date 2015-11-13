@@ -25,7 +25,7 @@ class MemeCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         let space: CGFloat = 3.0
-        let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
         
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
@@ -50,7 +50,7 @@ class MemeCollectionViewController: UICollectionViewController {
         if (segue.identifier == "CollectionToDetailSegue") {
             let detailVC = segue.destinationViewController as! MemeDetailViewController
             let cell = sender as! UICollectionViewCell
-            let indexPath = self.collectionView?.indexPathForCell(cell)
+            let indexPath = collectionView?.indexPathForCell(cell)
             
             detailVC.meme = memes[indexPath!.row]
         }

@@ -36,7 +36,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="qx1-j5-iSk" kind="presentation" identifier="TableToDetailSegue" id="Xbr-Mb-a2w"/>
+                                    <segue destination="qx1-j5-iSk" kind="show" identifier="TableToDetailSegue" id="Xbr-Mb-a2w"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -248,7 +248,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-J5-7dZ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-J5-7dZ">
                                         <rect key="frame" x="15" y="0.0" width="570" height="60"/>
                                         <animations/>
                                         <constraints>
@@ -257,7 +257,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHP-eo-c8N">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHP-eo-c8N">
                                         <rect key="frame" x="15" y="432" width="570" height="60"/>
                                         <animations/>
                                         <constraints>
@@ -395,71 +395,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZcQ-F0-6Fr">
-                                <rect key="frame" x="0.0" y="0.0" width="595" height="44"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="8OH-He-sCS"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Meme Detail" id="sz3-LZ-g7b">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="0bR-r0-XrT">
-                                            <connections>
-                                                <action selector="dismissDetail:" destination="qx1-j5-iSk" id="qVW-uW-DFI"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="GxO-Rn-ghd">
-                                            <connections>
-                                                <segue destination="vXZ-lx-hvc" kind="presentation" identifier="DetailToEditSegue" id="ON9-qX-jTG"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="axv-Vm-1oM">
-                                <rect key="frame" x="20" y="44" width="560" height="556"/>
+                                <rect key="frame" x="20" y="64" width="560" height="487"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="axv-Vm-1oM" firstAttribute="top" secondItem="Hj7-oQ-4yS" secondAttribute="bottom" id="5gp-eR-U4d"/>
-                            <constraint firstItem="ZcQ-F0-6Fr" firstAttribute="top" secondItem="ZYm-fO-Igl" secondAttribute="topMargin" id="8ic-hj-du4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="axv-Vm-1oM" secondAttribute="trailing" id="8lj-bd-r4A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZcQ-F0-6Fr" secondAttribute="trailing" id="Aso-DK-9XP"/>
                             <constraint firstItem="axv-Vm-1oM" firstAttribute="leading" secondItem="ZYm-fO-Igl" secondAttribute="leadingMargin" id="Bmw-i7-HXO"/>
+                            <constraint firstItem="axv-Vm-1oM" firstAttribute="top" secondItem="Hj7-oQ-4yS" secondAttribute="bottom" id="DiI-ka-Kmo"/>
                             <constraint firstItem="MUv-lv-0SW" firstAttribute="top" secondItem="axv-Vm-1oM" secondAttribute="bottom" id="GfT-d1-hck"/>
-                            <constraint firstItem="axv-Vm-1oM" firstAttribute="centerX" secondItem="ZYm-fO-Igl" secondAttribute="centerX" id="MZW-lc-9wH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="axv-Vm-1oM" secondAttribute="trailing" id="TuZ-zB-SaL"/>
-                            <constraint firstItem="axv-Vm-1oM" firstAttribute="centerY" secondItem="ZYm-fO-Igl" secondAttribute="centerY" id="Tws-qw-zYa"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="axv-Vm-1oM" secondAttribute="bottom" id="aGU-R4-cC4"/>
-                            <constraint firstItem="axv-Vm-1oM" firstAttribute="leading" secondItem="ZYm-fO-Igl" secondAttribute="leadingMargin" id="eHx-7I-DAW"/>
-                            <constraint firstItem="ZcQ-F0-6Fr" firstAttribute="leading" secondItem="ZYm-fO-Igl" secondAttribute="leadingMargin" constant="-20" id="gBO-Fg-MjU"/>
-                            <constraint firstItem="axv-Vm-1oM" firstAttribute="top" secondItem="ZcQ-F0-6Fr" secondAttribute="bottom" id="lgg-sJ-iNZ"/>
-                            <constraint firstItem="ZcQ-F0-6Fr" firstAttribute="leading" secondItem="ZYm-fO-Igl" secondAttribute="leadingMargin" id="nBx-uI-k4T"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZcQ-F0-6Fr" secondAttribute="trailing" constant="-20" id="otu-d3-D7m"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Aso-DK-9XP"/>
-                                <exclude reference="nBx-uI-k4T"/>
-                                <exclude reference="5gp-eR-U4d"/>
-                                <exclude reference="MZW-lc-9wH"/>
-                                <exclude reference="TuZ-zB-SaL"/>
-                                <exclude reference="Tws-qw-zYa"/>
-                                <exclude reference="aGU-R4-cC4"/>
-                                <exclude reference="eHx-7I-DAW"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="memeImage" destination="axv-Vm-1oM" id="KpK-Vq-aAW"/>
+                        <segue destination="vXZ-lx-hvc" kind="presentation" identifier="DetailToEditSegue" id="wwf-k3-VU1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXH-05-seS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="-524"/>
+            <point key="canvasLocation" x="548" y="-528"/>
         </scene>
     </scenes>
     <resources>
@@ -467,7 +424,7 @@
         <image name="tableIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ITK-nh-9j1"/>
         <segue reference="Xbr-Mb-a2w"/>
-        <segue reference="ON9-qX-jTG"/>
     </inferredMetricsTieBreakers>
 </document>

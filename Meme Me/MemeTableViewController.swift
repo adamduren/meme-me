@@ -43,7 +43,7 @@ class MemeTableViewController: UITableViewController {
         if (segue.identifier == "TableToDetailSegue") {
             let detailVC = segue.destinationViewController as! MemeDetailViewController
             let cell = sender as! UITableViewCell
-            let indexPath = self.tableView.indexPathForCell(cell)!
+            let indexPath = tableView.indexPathForCell(cell)!
             
             detailVC.meme = memes[indexPath.row]
         }

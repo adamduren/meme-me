@@ -22,13 +22,15 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var meme: Meme!
     var orientation: UIInterfaceOrientation!
+    let DEFAULT_TOP_TEXT = "TOP TEXT"
+    let DEFAULT_BOTTOM_TEXT = "BOTTOM TEXT"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configureCameraButton()
-        configureTextField(topTextField)
-        configureTextField(bottomTextField)
+        configureTextField(topTextField, text: DEFAULT_TOP_TEXT)
+        configureTextField(bottomTextField, text: DEFAULT_BOTTOM_TEXT)
         resetViewState()
         
         if (meme != nil) {
@@ -101,7 +103,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     
-    func configureTextField(textField: UITextField) {
+    func configureTextField(textField: UITextField, text: String) {
         let memeTextAttributes = [
             NSStrokeColorAttributeName: UIColor.blackColor(),
             NSForegroundColorAttributeName: UIColor.whiteColor(),
@@ -111,6 +113,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = NSTextAlignment.Center
+        textField.attributedPlaceholder = NSAttributedString(string: text, attributes: memeTextAttributes)
         textField.delegate = self
     }
     
@@ -214,8 +217,8 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func resetViewState() {
-        topTextField.text = "TOP TEXT"
-        bottomTextField.text = "BOTTOM TEXT"
+        configureTextField(topTextField, text: DEFAULT_TOP_TEXT)
+        configureTextField(bottomTextField, text: DEFAULT_BOTTOM_TEXT)
         imageView.image = nil
         shareButton.enabled = false
         orientation = UIApplication.sharedApplication().statusBarOrientation
